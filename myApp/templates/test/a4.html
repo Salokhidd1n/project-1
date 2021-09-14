@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style></style>
+<body>
+    <input type="text" id="r">
+    <button onClick="color();">Поставит</button>
+<input type="text" id="s">
+<button onClick="img();">Поставит</button>
+<div class="container">
+        <div class="button">button</div>
+    </div>
+</body>
+<script>
+function color(){
+  var input =  document.getElementById('r').value;
+  document.body.style.backgroundColor  =input;
+}
+function img(){
+  var input = document.getElementById('s').value;
+  document.body.style.backgroundImage ='url("' +input+'")';
+}
+</script>
+</html>

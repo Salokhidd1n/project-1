@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>калькулятор</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDOu2EDYsH1Tir0G9FGW7Rl1krRvGkAW9gmg&usqp=CAU">
+</head>
+<body>
+    <style>
+        /* body{
+    margin: 0%;
+    overflow: hidden;
+    background: rgb(17, 17, 19);
+} */
+body{
+    background-color: rgb(179, 46, 46);
+    user-select: none;
+}
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 4px;
+    background-color: #212121;
+    padding: 4px;
+    border-radius: 5px;
+    max-width: 360px;
+    font-family: "Tahoma";
+}
+.item{
+    background-color: #B3E5FC;
+    color: #000;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    cursor: pointer;
+    font-weight: bold;
+}
+    form{
+    max-width: 100%;
+}
+.lox{
+    width: 10px;
+    height: 6px;
+    background-color: #000;
+    position: relative;
+    left: 361px;
+    bottom: 495px;
+}
+    input{
+    width: 100%;
+    height: 60px;
+    border: none;
+    font-size: 30px;
+    outline: none;
+    text-align: right;
+}
+.input{
+    grid-column: 1/-1;
+    padding: 0;
+}
+.wiw{
+    grid-column: 1/3;
+    background-color: #0288d1;
+}
+.wiw1{
+    grid-column: 3/-1;
+}
+.equ{
+    grid-column: 4;
+    grid-row: 6/8;
+    background-color: #bdbdbd;
+}
+.zero{
+    grid-column: 1/3;
+}
+    </style>
+    <div class="container">
+        <div class="item input"><form name="form"><input type="text" name="textwive" readonly></form></div>
+        <div class="item wiw" onclick="wiw()">C</div>
+        <div class="item wiw1" onclick="wiwi()">&larr;</div>
+        <div class="item"  onclick="insert('+')">+</div>
+        <div class="item" onclick="insert('-')">-</div>
+        <div class="item" onclick="insert('*')">&times;</div>
+        <div class="item" onclick="insert('/')">&divide;</div>
+        <div class="item" onclick="insert('7')">7</div>
+        <div class="item" onclick="insert('8')">8</div>
+        <div class="item" onclick="insert('9')">9</div>
+        <div class="item" onclick="insert('(')">(</div>
+        <div class="item" onclick="insert('4')">4</div>
+        <div class="item" onclick="insert('5')">5</div>
+        <div class="item" onclick="insert('6')">6</div>
+        <div class="item" onclick="insert(')')">)</div>
+        <div class="item" onclick="insert('1')">1</div>
+        <div class="item" onclick="insert('2')">2</div>
+        <div class="item" onclick="insert('3')">3</div>
+        <div class="item equ" onclick="row()">=</div>
+        <div class="item zero"onclick="insert('0')">0</div>
+        <div class="item" onclick="insert('.')">.</div>
+        <div class="lox"></div>
+    </div>
+    <script>
+        function insert(num){
+    document.form.textwive.value =
+    document.form.textwive.value + num;
+}   
+    function wiw(){
+    document.form.textwive.value = "";
+    }
+    function wiwi(){
+        var exp =document.form.textwive.value;
+        document.form.textwive.value =exp.substring(0,
+        exp.length-1);
+    }
+    function row(){
+        var exp=document.form.textwive.value;
+        if(exp){
+            document.form.textwive.value=eval(exp);
+        }
+    }
+    </script>
+</body>
+</html>
+<script src="script.js"></script>
